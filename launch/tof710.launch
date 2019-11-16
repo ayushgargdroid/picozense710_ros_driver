@@ -1,0 +1,16 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+
+<!-- Starting TimeOfFlight Node -->
+
+  <node name="dcam710_publisher" pkg="adi_tof_kinetic" type="dcam710_publisher" output="screen">
+  </node>
+
+  <!--<node name="image_listener3" pkg="adi_tof_kinetic" type="dcam100_subscriber" output="screen">
+  </node>-->
+
+  <node name="tof_cam" pkg="image_view" type="image_view" output="screen">
+    <remap from="image" to="/camera/image"/>
+  </node>
+
+</launch>
